@@ -1,0 +1,125 @@
+/*
+ESTILOS GENERALES PARA LOS BOTONES
+*/
+.btn {
+  border-radius: 100px !important;
+}
+
+.form-control {
+  border-radius: 100px !important;
+  border: none !important;
+}
+
+/*****************************************************
+ESTILOS COLOR PRINCIPAL
+******************************************************/
+.color-nav {
+  background-color: green;
+}
+
+/*****************************************************
+ESTILOS COLOR SECUNDARIO
+******************************************************/
+.bg-secundario {
+  background-color: #1E1E1E;
+  width: 20%;
+}
+
+@media (max-width: 785px) {
+  #lateral {
+    width: 100%;
+  }
+}
+/*****************************************************
+REDES SOCIALES
+******************************************************/
+#barra-contacto {
+  height: 48px;
+}
+
+.facebook {
+  color: white;
+  font-size: 1.4rem;
+  margin-top: 5px;
+  opacity: 0.7;
+  transition: 0.6s ease;
+}
+
+.youtube {
+  color: white;
+  font-size: 1.4rem;
+  margin-top: 5px;
+  opacity: 0.7;
+  transition: 0.6s ease;
+}
+
+.facebook:hover {
+  opacity: 1;
+  transform: scale(1.4) rotateY(360deg);
+}
+
+.youtube:hover {
+  opacity: 1;
+  transform: scale(1.4) rotate;
+  transform: scale(1.4) rotateY(360deg);
+}
+
+/*****************************************************
+BARRA DE CONTACTO
+******************************************************/
+button, input {
+  overflow: none;
+}
+
+/*****************************************************
+BARRA LATERAL
+******************************************************/
+#aside {
+  height: 500px;
+  color: white;
+  float: left;
+  background-color: #1E1E1E;
+  border: 1px solid #1E1E1E;
+  box-shadow: 2px 0px 2px green;
+  overflow: auto;
+}
+
+#aside ul li a {
+  color: white;
+}
+
+#aside a {
+  color: white;
+  text-decoration: none;
+}
+
+/*****************************************************
+BARRA DE SCROLL
+******************************************************/
+.aside::-webkit-scrollbar {
+  width: 8px;
+}
+
+.aside::-webkit-scrollbar-thumb {
+  background-color: green;
+  border-radius: 5px;
+}
+
+/*****************************************************
+FORMULARIO LOGIN
+******************************************************/
+#login {
+  width: 300px;
+  color: #d8d5d5;
+  margin-top: 100px;
+  padding-bottom: 20px;
+  border-radius: 20px;
+  background-color: #1E1E1E;
+  box-shadow: 3px 3px 3px #1E1E1E;
+}
+
+.btn-login {
+  margin-top: 50px;
+}
+
+/*# sourceMappingURL=styles.css.map */
