@@ -15,7 +15,8 @@ import { PAGES_ROUTES } from './pages.routes';
         SharedModule,
         PAGES_ROUTES
     
-    ]
+    ],
+    bootstrap: [PagesComponent]
 })
 
 

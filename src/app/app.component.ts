@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-// import { faCoffee } from '@fortawesome/free-solid-svg-icons';
+import { SharedService, SidebarService } from './services/services.index';
 
 @Component({
   selector: 'app-root',
