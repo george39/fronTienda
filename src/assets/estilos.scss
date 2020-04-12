@@ -27,7 +27,7 @@ ESTILOS GENERALES PARA LOS BOTONES
 
 .form-control {
     border-radius: 100px !important;
-    border: none !important;
+    // border: none !important;
 }
 
 
@@ -219,8 +219,8 @@ aside li ul {
     text-decoration: none;
     list-style: none;
     font-size: 13px;
-    padding-right: 3px;
-    padding-left: 3px;
+    padding-right: 2px;
+    padding-left: 2px;
     // padding: 5px;
 }
 
@@ -259,6 +259,22 @@ BARRA DE SCROLL
     border-radius: 5px;
 }
 
+//**************************************************************************
+// FORMULARIO DE REGISTRO
+//**************************************************************************
+#register {
+    width: 500px;
+    background-color: $secundario;
+    color: white;
+    margin-top: 10px;
+}
+
+.btn-register {
+    background-color: $principal !important;
+    margin-top: 50px;
+    border: none !important;
+}
+
 
 /*****************************************************
 FORMULARIO LOGIN
@@ -267,7 +283,7 @@ FORMULARIO LOGIN
 #login {
     width: 300px;
     color: rgb(216, 213, 213);
-    margin-top: 100px;
+    margin-top: 50px;
     padding-bottom: 20px;
     border-radius: 20px;
     background-color: $secundario;
@@ -275,5 +291,7 @@ FORMULARIO LOGIN
 }
 
 .btn-login {
+    background-color: $principal !important;
     margin-top: 50px;
+    border: none !important;
 }

@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
+
 import { SharedService, SidebarService } from './services/services.index';
 
 
@@ -19,6 +20,9 @@ import { APP_ROUTES } from './app.routes';
 import { PagesModule } from './components/pages/pages.module';
 import { ServiceModule } from './services/service.module';
 import { AbarrotesComponent } from './components/abarrotes/abarrotes.component';
+import { LoginComponent } from './components/login/login.component';
+import { RegisterComponent } from './components/register/register.component';
+import { FormsModule } from '@angular/forms';
 
 
 // import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
@@ -27,6 +31,8 @@ import { AbarrotesComponent } from './components/abarrotes/abarrotes.component';
   declarations: [
     AppComponent,
     AbarrotesComponent,
+    LoginComponent,
+    RegisterComponent
     
     
   ],
@@ -34,7 +40,8 @@ import { AbarrotesComponent } from './components/abarrotes/abarrotes.component';
     BrowserModule,
     APP_ROUTES,
     PagesModule,
-    ServiceModule
+    ServiceModule,
+    FormsModule
     // FontAwesomeModule
   ],
   providers: [

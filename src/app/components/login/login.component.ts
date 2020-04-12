@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { FormGroup, FormControl, Validators, NgForm } from '@angular/forms';
+import { Router, ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -10,7 +11,7 @@ export class LoginComponent implements OnInit {
 
   forma: FormGroup;
 
-  constructor() { }
+  constructor(public router: Router) { }
 
   ngOnInit(): void {
 
@@ -24,5 +25,12 @@ export class LoginComponent implements OnInit {
 
     });
   }
+
+
+  ingresar() {
+     console.log('login');
+  }
+
+
 
 }

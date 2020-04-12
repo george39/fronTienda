@@ -1,25 +1,27 @@
 <div class="container" id="login">
+    <a type="buttom" [routerLink]="['/']">Ir a la tienda</a>
     <div class="row justify-content-center">
         <div class="col-12 col-lg-12">
-            <form action="" class="border rounded p-3 mt-3">
+            <form #loginForm="ngForm" class="border rounded p-3 mt-3" (ngSubmit)="ingresar()">
                 <h2 class="text-center pb-2">Ingresar</h2>
 
                 <div class="form-group">
                     <label for="email">Email</label>
-                    <input type="email" class="form-control" name="email" id="email"
-                    placeholder="Ingrese su email">
+                    <input type="email" class="form-control" name="email" id="email" placeholder="Ingrese su email">
                 </div>
 
                 <div class="form-group">
                     <label for="password">Contraseña</label>
-                    <input type="password" class="form-control" name="password" id="password"
-                    placeholder="ingrese la contraseña">
+                    <input type="password" class="form-control" name="password" id="password" placeholder="ingrese la contraseña">
                 </div>
 
                 <div class="form-group">
                     <button type="submit" class="btn btn-login btn-primary btn-block"><i class="fas fa-sign-in-alt mr-2 "></i>Ingresar</button>
                 </div>
+
             </form>
+            <span>¿No estas registrado? </span><a [routerLink]="['/register']">Registrate aqui</a>
+
         </div>
     </div>
 </div>
