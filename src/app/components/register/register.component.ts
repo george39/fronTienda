@@ -1,6 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { User } from 'src/app/models/user.models';
 import { ActivatedRoute, Router } from '@angular/router';
+import { FormGroup, FormControl, Validators } from '@angular/forms';
+
+import Swal from 'sweetalert2';
+import { UserService } from '../../services/services.index';
 
 @Component({
   selector: 'app-register',
@@ -9,20 +13,69 @@ import { ActivatedRoute, Router } from '@angular/router';
 })
 export class RegisterComponent implements OnInit {
 
-  public user: User;
+  forma: FormGroup;
 
   constructor(
     private route: ActivatedRoute,
     private router: Router,
+    public userService: UserService
   ) { 
-    this.user = new User('', '', '', '', '', '');
+    
+  }
+
+
+  sonIguales(campo1: string, campo2: string) {
+
+    return (group: FormGroup) => {
+      
+      let pass1 = group.controls[campo1].value;
+      let pass2 = group.controls[campo2].value;
+
+      if (pass1 === pass2) {
+        return null;
+      }
+
+      return {
+        sonIguales: true
+      };
+    };
   }
 
   ngOnInit(): void {
+
+    this.forma = new FormGroup({
+      name: new FormControl(null, Validators.required),
+      surname: new FormControl(null, Validators.required),
+      address: new FormControl(null, Validators.required),
+      email: new FormControl(null, [Validators.required, Validators.email]),
+      password: new FormControl(null, Validators.required),
+      password2: new FormControl(null),
+    },  {validators: this.sonIguales('password', 'password2')});
   }
 
+  
+
   onSubmit() {
-    console.log('registro');
+    if (this.forma.invalid) {
+      Swal.fire('importante', 'Faltan campos por llenar', 'warning');
+    }
+   
+    let user = new User(
+      '',
+      this.forma.value.name,
+      this.forma.value.surname,
+      this.forma.value.email,
+      this.forma.value.address,
+      this.forma.value.password
+
+    );
+
+    this.userService.saveUser(user).subscribe( resp => {
+
+      console.log(resp);
+    });
   }
+
+
 
 }

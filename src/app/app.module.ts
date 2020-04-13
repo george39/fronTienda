@@ -22,7 +22,7 @@ import { ServiceModule } from './services/service.module';
 import { AbarrotesComponent } from './components/abarrotes/abarrotes.component';
 import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 // import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
@@ -41,7 +41,8 @@ import { FormsModule } from '@angular/forms';
     APP_ROUTES,
     PagesModule,
     ServiceModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
     // FontAwesomeModule
   ],
   providers: [

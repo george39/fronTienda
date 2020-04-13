@@ -6,8 +6,6 @@ export class User {
         public address: string,
         public email: string,
         public password: string,
-        public date?: Date,
-        public role?: string,
         public image?: string
     ) {}
 }
