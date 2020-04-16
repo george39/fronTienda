@@ -2,17 +2,17 @@
     <a type="buttom" [routerLink]="['/']">Ir a la tienda</a>
     <div class="row justify-content-center">
         <div class="col-12 col-lg-12">
-            <form #loginForm="ngForm" class="border rounded p-3 mt-3" (ngSubmit)="ingresar()">
+            <form #loginForm="ngForm" class="border rounded p-3 mt-3" (ngSubmit)="ingresar(loginForm)">
                 <h2 class="text-center pb-2">Ingresar</h2>
 
                 <div class="form-group">
                     <label for="email">Email</label>
-                    <input type="email" class="form-control" name="email" id="email" placeholder="Ingrese su email">
+                    <input type="email" ngModel class="form-control" name="email" id="email" placeholder="Ingrese su email" required>
                 </div>
 
                 <div class="form-group">
                     <label for="password">Contraseña</label>
-                    <input type="password" class="form-control" name="password" id="password" placeholder="ingrese la contraseña">
+                    <input type="password" ngModel class="form-control" name="password" id="password" placeholder="ingrese la contraseña" required>
                 </div>
 
                 <div class="form-group">

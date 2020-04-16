@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators, NgForm } from '@angular/forms';
 import { Router, ActivatedRoute } from '@angular/router';
+import { UserService } from '../../services/services.index';
+import { User } from '../../models/user.models';
 
 @Component({
   selector: 'app-login',
@@ -11,24 +13,29 @@ export class LoginComponent implements OnInit {
 
   forma: FormGroup;
 
-  constructor(public router: Router) { }
+  constructor(
+    public router: Router,
+    public userService: UserService,
+    
+    ) { }
 
   ngOnInit(): void {
 
-    this.forma = new FormGroup({
-      name: new FormControl(null, Validators.required),
-      surname: new FormControl(null, Validators.required),
-      address: new FormControl(null, Validators.required),
-      email: new FormControl(null, [Validators.required, Validators.email]),
-      password: new FormControl(null, Validators.required),
-      password2: new FormControl(null, Validators.required)
-
-    });
+   
   }
 
 
-  ingresar() {
-     console.log('login');
+  ingresar(forma: NgForm) {
+
+    if (forma.invalid) {
+      return;
+    }
+
+    let user = new User(null, null, null, null, forma.value.email, forma.value.password, null );
+    this.userService.login(user).subscribe( correcto => this.router.navigate(['/']) );
+    
+    
+   
   }
 
 

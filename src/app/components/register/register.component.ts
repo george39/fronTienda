@@ -59,19 +59,21 @@ export class RegisterComponent implements OnInit {
     if (this.forma.invalid) {
       Swal.fire('importante', 'Faltan campos por llenar', 'warning');
     }
-   
+    
     let user = new User(
       '',
       this.forma.value.name,
       this.forma.value.surname,
-      this.forma.value.email,
       this.forma.value.address,
+      this.forma.value.email,
       this.forma.value.password
-
-    );
-
+      
+      );
+      
     this.userService.saveUser(user).subscribe( resp => {
-
+        
+      Swal.fire('Bien hecho', 'El usuario fue creado correctamente', 'success');
+      this.router.navigate(['/login']);
       console.log(resp);
     });
   }

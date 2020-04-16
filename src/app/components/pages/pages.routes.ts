@@ -5,6 +5,7 @@ import { ArrozComponent } from '../shared/sidebar/abarrotes/arroz.component';
 import { NavAbarrotesComponent } from '../shared/sidebar/nav-abarrotes/nav-abarrotes.component';
 import { LoginComponent } from '../login/login.component';
 //import { RegisterComponent } from '../register/register.component';
+import { LoginGuardGuard } from '../../services/guards/login-guard.guard';
 
 
 
@@ -12,12 +13,13 @@ const pagesRoutes: Routes =  [
     {
         path: '',
         component: PagesComponent,
+        // canActivate: [LoginGuardGuard],
         children: [
             {path: 'abarrotes', component: NavAbarrotesComponent},
             {path: 'arroz', component: ArrozComponent},
             //{path: 'login', component: LoginComponent},
             //{path: 'register', component: RegisterComponent},
-            { path: '', redirectTo: 'home', pathMatch: 'full'}
+           // { path: '', redirectTo: 'home', pathMatch: 'full'}
         ]
     }
 
