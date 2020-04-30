@@ -24,7 +24,7 @@
         "@fortawesome/fontawesome-svg-core": "^1.2.27",
         "@fortawesome/free-solid-svg-icons": "^5.12.1",
         "bootstrap": "^4.4.1",
-        "jquery": "^3.4.1",
+        "jquery": "^3.5.0",
         "rxjs": "~6.5.4",
         "rxjs-compat": "^6.5.5",
         "sweetalert2": "^9.10.10",
